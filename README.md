@@ -18,7 +18,7 @@ docker run --name myglowroot --link mycassandra:cassandra --publish 0.0.0.0:4000
 
 You should see something like below
 
-![](documentation\images\starting_docker_glowroot_run.png)
+![](documentation/images/starting_docker_glowroot_run.png)
 
 PS: This is not using from the official document as there is open bug from the official document which causes the issue
 
@@ -39,4 +39,4 @@ Outcome should something like below (more then one instance shall be present):
 
 PS: The **glowroot.agent.id** will represent the service name in the selected instances
 
-![](documentation\images\glowroot_web_instances.png)
+![](documentation/images/glowroot_web_instances.png)
