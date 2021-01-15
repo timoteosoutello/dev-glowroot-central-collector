@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  db:
+    image: cassandra:4.0
+    container_name: cassandra
+    ports:
+      - 7000:7000
+    networks:
+      - glowroot_net
+    volumes: 
+      - cassandra:/var/lib/cassandra
+
+  glowroot:
+    container_name: glowroot
+    image: tsoutello/glowroot-central:0.13.6-1
+    ports:
+      - 4000:4000
+      - 8181:8181
+    networks:
+      - glowroot_net
+    depends_on: 
+      - db 
+
+volumes:
+  cassandra: {}
+
+networks: 
+  glowroot_net:
